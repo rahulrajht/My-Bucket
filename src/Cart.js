@@ -5,7 +5,7 @@ import { useCart } from "./cartContext";
 export default function Cart() {
   const { itemsInCart, setItemsInCart } = useCart();
   console.log({ itemsInCart });
-  
+
   function removeItem(removeItem) {
     setItemsInCart(itemsInCart.filter((e) => e !== removeItem));
   }
@@ -23,8 +23,8 @@ export default function Cart() {
     }
     const newItem = itemsInCart.map((i) => {
       if (i.id === data.id) {
-        if(i.count===0){
-          removeItem(data)
+        if (i.count === 0) {
+          removeItem(data);
         }
         return { ...i, count: i.count + value };
       } else {
@@ -63,14 +63,14 @@ export default function Cart() {
                     -{" "}
                   </span>
                 </div>
-                <span className="item_price">Rs. {item.price}</span>
-                <button
-                  onClick={() => removeItem(item)}
-                  className="item_in_stock"
-                >
-                  {" "}
-                  Remove{" "}
-                </button>
+                <span className="item_price">₹ {item.price}</span>
+                <div>
+                  <div className="remove_btn"> Save For Later</div>
+                  <div onClick={() => removeItem(item)} className="remove_btn">
+                    {" "}
+                    Remove{" "}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

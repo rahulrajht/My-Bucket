@@ -46,7 +46,7 @@ export default function Product() {
           <div className="item" key={item.id}>
             <img className="images" src={item.image} alt={item.title} />
             <h4 className="item_name"> {item.title} </h4>
-            <div className="item_price">Rs. {item.price}</div>
+            <div className="item_price"> ₹ {item.price}</div>
             <button
               onClick={() => addItemsInCart(item)}
               className="item_in_stock"
