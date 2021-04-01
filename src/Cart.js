@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { useCart } from "./cartContext";
+import Price from "./components/Price";
 import Rating from "./components/Rating";
 
 export default function Cart() {
@@ -65,7 +66,7 @@ export default function Cart() {
                     -{" "}
                   </span>
                 </div>
-                <span className="item_price">₹ {item.price}</span>
+                <Price price={item.price} discount={item.discount} />
                 <div>
                   <div className="remove_btn"> Save For Later</div>
                   <div onClick={() => removeItem(item)} className="remove_btn">
