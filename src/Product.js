@@ -6,6 +6,7 @@ import faker from "faker";
 import { AddToCartButton } from "./components/AddCartButton";
 import star from "../src/star.png";
 import Rating from "./components/Rating";
+import Price from "./components/Price";
 
 export default function Product() {
   const [data, setData] = useState([]);
@@ -35,7 +36,7 @@ export default function Product() {
             <img className="images" src={item.image} alt={item.title} />
             <Rating rt={item.ratings} />
             <div className="item_name"> {item.title} </div>
-            <div className="item_price"> ₹ {item.price} </div>
+            <Price price={item.price} discount={item.discount} />
             <AddToCartButton item={item} />
           </div>
         ))}

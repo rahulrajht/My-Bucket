@@ -147,6 +147,8 @@ button {
 }
 .item_name {
   margin-top: 10px;
+  font-weight: 550;
+  color: rgb(37, 37, 37);
 }
 .item_price {
   display: block;

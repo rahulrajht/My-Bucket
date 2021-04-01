@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { useCart } from "./cartContext";
+import Rating from "./components/Rating";
 
 export default function Cart() {
   const { itemsInCart, setItemsInCart } = useCart();
@@ -46,6 +47,7 @@ export default function Cart() {
               </div>
               <div className="right">
                 <h4 className="item_name"> {item.title} </h4>
+                <Rating rt={item.ratings} />
                 <div className="flex-row">
                   <span
                     onClick={() => changeQty({ payload: "inc", data: item })}
