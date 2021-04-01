@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
-import { useCart } from "./cartContext";
+import { useEffect, useState } from "react";
 import "./styles.css";
 import { useUrl } from "./useUrl";
+import faker from "faker";
+import { AddToCartButton } from "./components/AddCartButton";
+import star from "../src/star.png";
 
 export default function Product() {
   const [data, setData] = useState([]);
@@ -10,50 +12,37 @@ export default function Product() {
   useEffect(() => {
     async function getData() {
       const response = await axios.get(url);
-      console.log(response.data);
-      setData(response.data);
+      const newData = response.data.map((item) => {
+        return {
+          ...item,
+          inStock: faker.datatype.boolean(),
+          fastDelivery: faker.datatype.boolean(),
+          ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
+          discount: faker.random.arrayElement([25, 50, 70, 0])
+        };
+      });
+      setData(newData);
     }
     getData();
   }, [url]);
-
-  const { itemsInCart, setItemsInCart } = useCart();
-  function addItemsInCart(item) {
-    let val = true;
-    if (itemsInCart.length === 0) {
-      setItemsInCart(itemsInCart.concat({ ...item, count: 1, isInCart: true }));
-      return;
-    }
-    const newItem = itemsInCart.map((i) => {
-      if (i.id === item.id) {
-        val = false;
-        return { ...i };
-      } else {
-        return i;
-      }
-    });
-    if (val) {
-      val = false;
-      setItemsInCart(newItem.concat({ ...item, count: 1 }));
-    } else {
-      setItemsInCart(newItem);
-    }
-  }
 
   return (
     <>
       <div className="prod">
         {data.map((item) => (
-          <div className="item" key={item.id}>
+          <div className="card card--shadow" key={item.id}>
             <img className="images" src={item.image} alt={item.title} />
-            <h4 className="item_name"> {item.title} </h4>
+            <div className="card__badges">
+              <div className="rating">
+                <span className="badge">
+                  {item.ratings}{" "}
+                  <img className="fa" width="15px" src={star} alt="" />
+                </span>
+              </div>
+            </div>
+            <div className="item_name"> {item.title} </div>
             <div className="item_price"> ₹ {item.price}</div>
-            <button
-              onClick={() => addItemsInCart(item)}
-              className="item_in_stock"
-            >
-              {" "}
-              Add to Cart
-            </button>
+            <AddToCartButton item={item} />
           </div>
         ))}
       </div>
