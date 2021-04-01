@@ -25,7 +25,7 @@ export const AddToCartButton = (item) => {
     <button
       disabled={!item.item.inStock}
       onClick={handleClick}
-      className="btn-add"
+      className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
     >
       {getButtonText()}
     </button>
