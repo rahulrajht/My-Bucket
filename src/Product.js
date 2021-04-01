@@ -5,6 +5,7 @@ import { useUrl } from "./useUrl";
 import faker from "faker";
 import { AddToCartButton } from "./components/AddCartButton";
 import star from "../src/star.png";
+import Rating from "./components/Rating";
 
 export default function Product() {
   const [data, setData] = useState([]);
@@ -32,16 +33,9 @@ export default function Product() {
         {data.map((item) => (
           <div className="card card--shadow" key={item.id}>
             <img className="images" src={item.image} alt={item.title} />
-            <div className="card__badges">
-              <div className="rating">
-                <span className="badge">
-                  {item.ratings}{" "}
-                  <img className="fa" width="15px" src={star} alt="" />
-                </span>
-              </div>
-            </div>
+            <Rating rt={item.ratings} />
             <div className="item_name"> {item.title} </div>
-            <div className="item_price"> ₹ {item.price}</div>
+            <div className="item_price"> ₹ {item.price} </div>
             <AddToCartButton item={item} />
           </div>
         ))}
