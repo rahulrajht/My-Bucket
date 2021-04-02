@@ -1,11 +1,11 @@
-import cart from "./cart.png";
-import wish from "./wish.png";
-import "./styles.css";
+import cart from "../images/cart.png";
+import wish from "../images/wish.png";
+import "../styles.css";
 import { useRef } from "react";
-import { useScreen } from "./changeScreen";
+import { useScreen } from "../context/changeScreen";
 import Cart from "./Cart";
-import { useUrl } from "./useUrl";
-import { useCart } from "./cartContext";
+import { useUrl } from "../context/useUrl";
+import { useCart } from "../context/cartContext";
 export default function Nav() {
   const { itemsInCart } = useCart();
   const { setScreen } = useScreen();

@@ -1,8 +1,8 @@
 import React from "react";
-import "./styles.css";
-import { useCart } from "./cartContext";
-import Price from "./components/Price";
-import Rating from "./components/Rating";
+import "../styles.css";
+import { useCart } from "../context/cartContext";
+import Price from "./Price";
+import Rating from "./Rating";
 
 export default function Cart() {
   const { itemsInCart, setItemsInCart } = useCart();

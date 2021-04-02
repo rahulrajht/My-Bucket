@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./styles.css";
-import { useUrl } from "./useUrl";
+import "../styles.css";
+import { useUrl } from "../context/useUrl";
 import faker from "faker";
-import { AddToCartButton } from "./components/AddCartButton";
-import star from "../src/star.png";
-import Rating from "./components/Rating";
-import Price from "./components/Price";
+import { AddToCartButton } from "./AddCartButton";
+import Rating from "./Rating";
+import Price from "./Price";
 
 export default function Product() {
   const [data, setData] = useState([]);

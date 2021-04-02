@@ -1,4 +1,4 @@
-import Product from "./Product";
+import Product from "../components/Product";
 import { useContext, createContext, useState } from "react";
 export const changeContext = createContext();
 
