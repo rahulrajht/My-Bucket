@@ -7,10 +7,11 @@ import Cart from "./Cart";
 import { useUrl } from "../context/useUrl";
 import { useCart } from "../context/cartContext";
 export default function Nav() {
-  const { itemsInCart } = useCart();
+  const { cartItems } = useCart();
   const { setScreen } = useScreen();
   const { setUrl } = useUrl();
   const cartRef = useRef();
+
   function changeScreen() {
     setScreen(<Cart />);
   }
@@ -61,7 +62,7 @@ export default function Nav() {
       <ul>
         <div className="Cart">
           <img onClick={changeScreen} ref={cartRef} src={cart} alt=" " />
-          <span className="val"> {itemsInCart.length} </span>
+          <span className="val"> {cartItems.length} </span>
         </div>
         <div>
           <img src={wish} alt=" " />

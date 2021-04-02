@@ -5,43 +5,44 @@ import Price from "./Price";
 import Rating from "./Rating";
 
 export default function Cart() {
-  const { itemsInCart, setItemsInCart } = useCart();
-  console.log({ itemsInCart });
+  const { cartItems, dispatchData } = useCart();
 
-  function removeItem(removeItem) {
-    setItemsInCart(itemsInCart.filter((e) => e !== removeItem));
+  function removeItem(items) {
+    const id = items.id;
+    dispatchData({
+      type: "removeCartItem",
+      id
+    });
   }
   function changeQty({ payload, data }) {
-    let value = 0;
+    console.log("item in ", data);
+    const id = data.id;
+    const items = data;
     switch (payload) {
       case "inc":
-        value = 1;
+        dispatchData({
+          type: "incQty",
+          id
+        });
         break;
       case "dec":
-        value = -1;
+        dispatchData({
+          type: "decQty",
+          id,
+          items
+        });
         break;
       default:
-        console.log(value);
+        console.log(data);
     }
-    const newItem = itemsInCart.map((i) => {
-      if (i.id === data.id) {
-        if (i.count === 0) {
-          removeItem(data);
-        }
-        return { ...i, count: i.count + value };
-      } else {
-        return i;
-      }
-    });
-    setItemsInCart(newItem);
   }
-  if (itemsInCart.length === 0) {
+  if (cartItems.length === 0) {
     return <h3> Cart is Empty</h3>;
   } else {
     return (
       <nav>
         <div className="cartProducts">
-          {itemsInCart.map((item) => (
+          {cartItems.map((item) => (
             <div className="cartItem" key={item.id}>
               <div className="left">
                 <img className="images" src={item.image} alt={item.title} />

@@ -1,36 +1,43 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../styles.css";
 import { useUrl } from "../context/useUrl";
 import faker from "faker";
 import { AddToCartButton } from "./AddCartButton";
 import Rating from "./Rating";
 import Price from "./Price";
+import { useCart } from "../context/cartContext";
 
 export default function Product() {
-  const [data, setData] = useState([]);
+  const { dispatchData } = useCart();
+
   const { url } = useUrl();
   useEffect(() => {
     async function getData() {
       const response = await axios.get(url);
-      const newData = response.data.map((item) => {
+      const newCartItems = response.data.map((item) => {
         return {
           ...item,
+          count: 1,
           inStock: faker.datatype.boolean(),
           fastDelivery: faker.datatype.boolean(),
           ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
           discount: faker.random.arrayElement([25, 50, 70, 0])
         };
       });
-      setData(newData);
+      dispatchData({
+        type: "setNewData",
+        newCartItems
+      });
     }
     getData();
-  }, [url]);
+  }, [url, dispatchData]);
+  const { filteredData } = useCart();
 
   return (
     <>
       <div className="prod">
-        {data.map((item) => (
+        {filteredData.map((item) => (
           <div className="card card--shadow" key={item.id}>
             <img className="images" src={item.image} alt={item.title} />
             <Rating rt={item.ratings} />

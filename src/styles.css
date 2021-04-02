@@ -232,3 +232,12 @@ button {
 .remove_btn:hover {
   color: cadetblue;
 }
+.filter-nav {
+  width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid gray;
+}
+input {
+  margin-left: 1rem;
+}
