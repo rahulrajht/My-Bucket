@@ -3,7 +3,7 @@ import { data, reducer } from "./useReducer";
 export const cartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [{ filteredData, cartItems, wishlist }, dispatch] = useReducer(
+  const [{ filteredData, cartItems, wishList }, dispatch] = useReducer(
     reducer,
     data
   );
@@ -13,7 +13,7 @@ export function CartProvider({ children }) {
       value={{
         filteredData,
         cartItems,
-        wishlist,
+        wishList,
         dispatchData: dispatch
       }}
     >

@@ -6,14 +6,18 @@ import { useScreen } from "../context/changeScreen";
 import Cart from "./Cart";
 import { useUrl } from "../context/useUrl";
 import { useCart } from "../context/cartContext";
+import WIshListCart from "./WishListCart";
 export default function Nav() {
-  const { cartItems } = useCart();
+  const { wishList, cartItems } = useCart();
   const { setScreen } = useScreen();
   const { setUrl } = useUrl();
   const cartRef = useRef();
 
-  function changeScreen() {
+  function changeScreenCart() {
     setScreen(<Cart />);
+  }
+  function changeScreenWish() {
+    setScreen(<WIshListCart />);
   }
   return (
     <nav className="navbars">
@@ -61,12 +65,12 @@ export default function Nav() {
       </div>
       <ul>
         <div className="Cart">
-          <img onClick={changeScreen} ref={cartRef} src={cart} alt=" " />
+          <img onClick={changeScreenCart} ref={cartRef} src={cart} alt=" " />
           <span className="val"> {cartItems.length} </span>
         </div>
         <div>
-          <img src={wish} alt=" " />
-          <span className="val"> 0 </span>
+          <img onClick={changeScreenWish} src={wish} alt=" " />
+          <span className="val"> {wishList ? wishList.length : 0} </span>
         </div>
         <div>
           <button> Toggle </button>

@@ -1,16 +1,18 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../styles.css";
+import wish from "../images/wish.png";
 import { useUrl } from "../context/useUrl";
 import faker from "faker";
 import { AddToCartButton } from "./AddCartButton";
 import Rating from "./Rating";
 import Price from "./Price";
 import { useCart } from "../context/cartContext";
+import { WishlistButton } from "./WishListButton";
 
 export default function Product() {
   const { dispatchData } = useCart();
-
+  const [wishImage, setWishImage] = useState(wish);
   const { url } = useUrl();
   useEffect(() => {
     async function getData() {
@@ -34,6 +36,13 @@ export default function Product() {
   }, [url, dispatchData]);
   const { filteredData } = useCart();
 
+  function addToWishList(items) {
+    setWishImage("");
+    dispatchData({
+      type: "addWishlistItem",
+      items
+    });
+  }
   return (
     <>
       <div className="prod">
@@ -44,6 +53,7 @@ export default function Product() {
             <div className="item_name"> {item.title} </div>
             <Price price={item.price} discount={item.discount} />
             <AddToCartButton item={item} />
+            <WishlistButton item={item} />
           </div>
         ))}
       </div>

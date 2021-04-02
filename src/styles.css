@@ -89,6 +89,7 @@ button {
   width: 70%;
 }
 .card {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -191,6 +192,13 @@ button {
   justify-content: center;
   flex-wrap: wrap;
 }
+.wishImage {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  cursor: pointer;
+}
 .side-bar {
   text-align: left;
 }
@@ -233,11 +241,16 @@ button {
   color: cadetblue;
 }
 .filter-nav {
+  display: flex;
   width: 600px;
-  margin: 1rem auto;
+  margin: 0rem auto;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
   padding: 1rem;
-  border: 1px solid gray;
+  background-color: rgb(240, 235, 235);
 }
 input {
   margin-left: 1rem;
 }
+
+/* Filter */

@@ -1,6 +1,6 @@
 export const data = {
   cartItems: [],
-  wishlist: [],
+  wishList: [],
   filteredData: []
 };
 
@@ -28,7 +28,7 @@ export function reducer(
     newCartItems
   }
 ) {
-  const { cartItems, wishlist } = state;
+  const { cartItems, wishList } = state;
   switch (type) {
     case INC_QTY:
       return {
@@ -70,17 +70,17 @@ export function reducer(
     case SET_WISHLIST_ITEMS:
       return {
         ...state,
-        wishlist: fetchedWishlist || []
+        wishList: fetchedWishlist || []
       };
     case REMOVE_WISHLIST_ITEM:
       return {
         ...state,
-        wishlist: wishlist.filter((items) => items.id !== id)
+        wishList: wishList.filter((items) => items.id !== id)
       };
     case ADD_WISHLIST_ITEM:
       return {
         ...state,
-        wishlist: wishlist.concat(items)
+        wishList: wishList.concat(items)
       };
     case SET_NEW_DATA:
       return {
