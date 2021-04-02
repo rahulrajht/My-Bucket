@@ -1,4 +1,4 @@
-import star from "../star.png";
+import star from "../images/star.png";
 import "../styles.css";
 
 export default function Rating({ rt }) {

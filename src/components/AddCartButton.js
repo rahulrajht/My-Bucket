@@ -1,7 +1,6 @@
-import Cart from "../Cart";
 import { checkItemInCart } from "../utils/checkItemInCart";
-import { useCart } from "../cartContext";
-import { useScreen } from "../changeScreen";
+import { useCart } from "../context/cartContext";
+import { useScreen } from "../context/changeScreen";
 import "../styles.css";
 export const AddToCartButton = (item) => {
   const { setScreen } = useScreen();
