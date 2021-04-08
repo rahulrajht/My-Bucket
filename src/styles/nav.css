@@ -1,0 +1,33 @@
+.navbars {
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
+  width: 100%;
+  background-color: cadetblue;
+}
+.navbars > ul {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+}
+.navbars > ul > div > img {
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+  display: flex;
+  justify-content: right;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbars > ul > div > .val {
+  position: absolute;
+  bottom: 5px;
+  width: 15px;
+  height: 20px;
+  padding: 0.15rem;
+  border-radius: 50%;
+  background-color: maroon;
+  color: white;
+}

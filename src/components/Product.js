@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
-import "../styles.css";
+import "../styles/product.css";
 import { useUrl } from "../context/useUrl";
 import faker from "faker";
 import { AddToCartButton } from "./AddCartButton";

@@ -1,5 +1,5 @@
 import { useCart } from "../context/cartContext";
-
+import "../styles/filter.css";
 export default function Filter() {
   const { filteredData, dispatchData } = useCart();
   return (

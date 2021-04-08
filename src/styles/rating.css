@@ -1,0 +1,27 @@
+.card-badges {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.25em 0.75em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+  font-size: 14px;
+  display: flex;
+}
+.badge--yellow {
+  background: yellow;
+}
+.badge--red {
+  background: red;
+}
+.badge-green {
+  background: green;
+}
+.rating-img {
+  display: inline-block;
+  margin-left: 5px;
+}

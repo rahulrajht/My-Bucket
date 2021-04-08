@@ -1,0 +1,9 @@
+button {
+  padding: 0.5rem 1rem;
+  background-color: orange;
+  outline: black;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 15px;
+  align-self: center;
+}

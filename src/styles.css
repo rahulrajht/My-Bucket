@@ -6,66 +6,12 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  width: 100%;
 }
 .screen {
   display: flex;
 }
-.navbars {
-  display: flex;
-  height: fit-content;
-  justify-content: space-between;
-  width: 100%;
-  background-color: cadetblue;
-}
-.navbars > ul {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem 2rem;
-}
-.navbars > ul > div > img {
-  width: 40px;
-  height: 40px;
-  margin-left: 15px;
-  display: flex;
-  justify-content: right;
-  cursor: pointer;
-  position: relative;
-}
 
-.navbars > ul > div > .val {
-  position: absolute;
-  bottom: 5px;
-  width: 15px;
-  height: 20px;
-  padding: 0.15rem;
-  border-radius: 50%;
-  background-color: maroon;
-  color: white;
-}
-button {
-  padding: 0.5rem 1rem;
-  background-color: orange;
-  outline: black;
-  cursor: pointer;
-  margin-top: 5px;
-  margin-left: 15px;
-  align-self: center;
-}
-.main-container {
-  width: 960px;
-  margin: 1rem auto;
-}
-.prod {
-  width: 960px;
-  margin: 1rem auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.card--shadow {
-  border: none;
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-}
 .cartProducts {
   width: 960px;
   margin: 1rem auto;
@@ -92,73 +38,7 @@ button {
   padding: 0.5rem;
   width: 70%;
 }
-.card {
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.25rem;
-  margin: 1rem;
-  width: 250px;
-  color: #4b5563;
-  padding: 1rem;
-  flex-wrap: wrap;
-  text-align: left;
-  justify-content: space-between;
-}
-.images {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-}
-.card__badges {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.rating {
-  color: #6b7280;
-  width: max-content;
-}
-.card .badge--regular {
-  font-weight: 400;
-  font-size: 0.8rem;
-}
-.badge {
-  padding: 0.25em 0.75em;
-  text-transform: uppercase;
-  font-weight: 400;
-  background: yellow;
-  color: white;
-  font-size: 14px;
-  display: flex;
-}
-.badge--yellow {
-  background: yellow;
-}
-.badge--red {
-  background: red;
-}
-.badge-green {
-  background: green;
-}
-.ml-space {
-  margin-left: 0.25rem;
-}
-.fa {
-  display: inline-block;
-  margin-left: 5px;
-}
-.item_name {
-  margin-top: 10px;
-  font-weight: 550;
-  color: rgb(37, 37, 37);
-}
-.item_price {
-  display: block;
-  text-align: left;
-  margin-top: 5px;
-}
+
 .btn-add {
   padding: 0.5rem;
   border-style: hidden;
@@ -242,16 +122,4 @@ button {
 }
 .remove_btn:hover {
   color: cadetblue;
-}
-.filter-nav {
-  display: flex;
-  width: 600px;
-  margin: 0rem auto;
-  margin-top: 1rem;
-  margin-bottom: 0rem;
-  padding: 1rem;
-  background-color: rgb(240, 235, 235);
-}
-input {
-  margin-left: 1rem;
 }

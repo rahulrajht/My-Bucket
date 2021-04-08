@@ -1,6 +1,6 @@
 import cart from "../images/cart.png";
 import wish from "../images/wish.png";
-import "../styles.css";
+import "../styles/nav.css";
 import { useRef } from "react";
 import { useScreen } from "../context/changeScreen";
 import Cart from "./Cart";

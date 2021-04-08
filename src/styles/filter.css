@@ -1,0 +1,12 @@
+.filter-nav {
+  display: flex;
+  width: 600px;
+  margin: 0rem auto;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  padding: 1rem;
+  background-color: rgb(240, 235, 235);
+}
+input {
+  margin-left: 1rem;
+}

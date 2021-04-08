@@ -1,4 +1,4 @@
-import "../styles.css";
+import "../styles/price.css";
 
 export default function Price({ price, discount }) {
   if (discount !== 0) {

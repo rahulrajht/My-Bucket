@@ -1,5 +1,5 @@
 import star from "../images/star.png";
-import "../styles.css";
+import "../styles/rating.css";
 
 export default function Rating({ rt }) {
   let color = "";
@@ -10,11 +10,11 @@ export default function Rating({ rt }) {
   if (rt >= 3 && rt <= 5) color = "badge-green";
   return (
     <>
-      <div className="card__badges">
+      <div className="card-badges">
         <div className="rating">
           <span className={`badge ${color}`}>
             {rt}
-            <img className="fa" width="15px" src={star} alt="" />
+            <img className="rating-img" width="15px" src={star} alt="" />
           </span>
         </div>
       </div>
