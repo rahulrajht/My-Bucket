@@ -98,36 +98,39 @@ export default function Nav() {
             </span>
           </div>
         </Link>
-        <div
-          style={{
-            position: "relative"
-          }}
-        >
-          <img
+        <Link to="/wishlist">
+          <div
             style={{
-              width: "40px",
-              position: "relative"
-            }}
-            onClick={changeScreenWish}
-            src={wish}
-            alt=" "
-          />
-          <span
-            style={{
-              position: "absolute",
-              width: "20px",
-              top: "-5px",
-              right: "-2px",
-              backgroundColor: "white",
-              borderRadius: "50%",
-              fontSize: "1rem",
-              padding: "0.25rem"
+              position: "relative",
+              marginLeft: "5px"
             }}
           >
-            {" "}
-            {wishList ? wishList.length : 0}{" "}
-          </span>
-        </div>
+            <img
+              style={{
+                width: "40px",
+                position: "relative"
+              }}
+              onClick={changeScreenWish}
+              src={wish}
+              alt=" "
+            />
+            <span
+              style={{
+                position: "absolute",
+                width: "20px",
+                top: "-5px",
+                right: "-2px",
+                backgroundColor: "white",
+                borderRadius: "50%",
+                fontSize: "1rem",
+                padding: "0.25rem"
+              }}
+            >
+              {" "}
+              {wishList ? wishList.length : 0}{" "}
+            </span>
+          </div>
+        </Link>
         <div>
           <button> Toggle </button>
         </div>

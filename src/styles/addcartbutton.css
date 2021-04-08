@@ -7,3 +7,18 @@ button {
   margin-left: 15px;
   align-self: center;
 }
+
+.btn-add {
+  padding: 0.5rem;
+  border-style: hidden;
+  color: black;
+  font-size: 1em;
+  border-radius: 5px;
+}
+.out {
+  background-color: #4b5563;
+  cursor: not-allowed;
+}
+.instock {
+  background-color: cadetblue;
+}
