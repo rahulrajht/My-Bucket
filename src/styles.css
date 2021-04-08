@@ -128,7 +128,6 @@ button {
   padding: 0.25em 0.75em;
   text-transform: uppercase;
   font-weight: 400;
-
   background: yellow;
   color: white;
   font-size: 14px;
@@ -256,5 +255,3 @@ button {
 input {
   margin-left: 1rem;
 }
-
-/* Filter */
