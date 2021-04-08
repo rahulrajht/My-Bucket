@@ -10,7 +10,6 @@ export default function App() {
   return (
     <div className="App">
       <UrlProvider>
-        {" "}
         <Nav />
         <Switch>
           <Route exact path="/">

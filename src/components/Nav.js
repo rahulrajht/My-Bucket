@@ -2,24 +2,15 @@ import cart from "../images/cart.png";
 import wish from "../images/wish.png";
 import "../styles/nav.css";
 import { useRef } from "react";
-import { useScreen } from "../context/changeScreen";
-import Cart from "./Cart";
 import { useUrl } from "../context/useUrl";
 import { useCart } from "../context/cartContext";
-import WIshListCart from "./WishListCart";
 import { Link } from "react-router-dom";
 export default function Nav() {
   const { wishList, cartItems } = useCart();
-  const { setScreen } = useScreen();
+
   const { setUrl } = useUrl();
   const cartRef = useRef();
 
-  function changeScreenCart() {
-    setScreen(<Cart />);
-  }
-  function changeScreenWish() {
-    setScreen(<WIshListCart />);
-  }
   return (
     <nav className="navbars">
       <div className="side-bar">
@@ -76,7 +67,6 @@ export default function Nav() {
                 width: "40px",
                 position: "relative"
               }}
-              onClick={changeScreenCart}
               ref={cartRef}
               src={cart}
               alt=" "
@@ -110,7 +100,6 @@ export default function Nav() {
                 width: "40px",
                 position: "relative"
               }}
-              onClick={changeScreenWish}
               src={wish}
               alt=" "
             />
