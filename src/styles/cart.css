@@ -1,8 +1,5 @@
-.cartProducts {
-  width: 960px;
-  margin: 1rem auto;
-}
 .cartItem {
+  width: 600px;
   display: flex;
   border: 1px solid #4b5563;
   border-radius: 0.5rem;
@@ -10,25 +7,23 @@
   padding: 1rem;
   flex-wrap: wrap;
 }
-.cartItem > .images {
+.cartItem > .left > .images {
   width: 100%;
   height: 150px;
   object-fit: contain;
 }
 .item_name {
-  margin-top: 10px;
   font-weight: 550;
   color: rgb(37, 37, 37);
 }
 
 .left {
-  margin-right: 50px;
-  width: 150px;
+  margin-right: 5px;
+  width: 100px;
 }
 .right {
   text-align: left;
-  padding: 0.5rem;
-  width: 70%;
+  width: 80%;
 }
 .btn-size {
   display: flex;
@@ -51,6 +46,7 @@
   margin: 1rem 0rem;
   padding: 0.05rem 0.25rem;
   justify-content: center;
+  cursor: pointer;
 }
 
 .remove_btn {

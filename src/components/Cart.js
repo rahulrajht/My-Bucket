@@ -67,7 +67,10 @@ export default function Cart() {
                     -{" "}
                   </span>
                 </div>
-                <Price price={item.price} discount={item.discount} />
+                <Price
+                  price={item.price * item.count}
+                  discount={item.discount}
+                />
                 <div>
                   <div className="remove_btn"> Save For Later</div>
                   <div onClick={() => removeItem(item)} className="remove_btn">
