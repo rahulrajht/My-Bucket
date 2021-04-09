@@ -1,35 +1,18 @@
 .navbars {
   display: flex;
-  height: fit-content;
+  height: 60px;
   justify-content: space-between;
   width: 100%;
-  background-color: cadetblue;
+  background: linear-gradient(145deg, #f5f5f5, #504a9e);
+  box-shadow: 5px 5px 7px #c5c5c5, -5px -5px 7px #fbfbfb;
 }
 .navbars > ul {
-  position: relative;
   display: flex;
-  justify-content: flex-end;
-  padding: 1rem 2rem;
+  margin-right: 5rem;
 }
-.navbars > ul > div > img {
-  width: 40px;
-  height: 40px;
-  margin-left: 15px;
-  display: flex;
-  justify-content: right;
-  cursor: pointer;
-  position: relative;
-}
-
-.navbars > ul > div > .val {
-  position: absolute;
-  bottom: 5px;
-  width: 15px;
-  height: 20px;
-  padding: 0.15rem;
-  border-radius: 50%;
-  background-color: maroon;
-  color: white;
+.navbars > ul > div {
+  text-align: center;
+  padding: 0.75rem;
 }
 .side-bar {
   text-align: left;
@@ -48,12 +31,53 @@
   border-radius: 10px;
   line-height: 29px;
   text-align: center;
-  color: #f8f6f8;
+  color: #232f34;
   border: 1px solid var(--secondary);
 }
 
 .side-bar > ul > li:hover {
   transition: all 0.6s ease-out;
-  background-color: cadetblue;
-  color: #0d0d0e;
+  background-color: #232f34;
+  color: #dbdbdf;
+}
+.cart {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  background: #bbb9b9
+    url(http://images.vfl.ru/ii/1484930184/14435803/15757225.png) center
+    no-repeat;
+  background-size: 30px;
+  box-shadow: 0 3px 6px rgba(97, 97, 97 0.16), 0 3px 6px rgba(97, 97, 97 0.23);
+}
+
+.span-img {
+  font-size: 16px;
+  color: #dfdcdc;
+  position: relative;
+  top: -45px;
+  left: 15px;
+  padding: 0.15rem;
+  list-style: none;
+  border-radius: 50px;
+  background: #232f34;
+}
+.wishlist {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  background: url(https://user-images.githubusercontent.com/63516339/114140817-63646000-992e-11eb-9ee2-717bdd0c05b3.png)
+    center no-repeat #b4b1b4;
+  background-size: 30px;
+  box-shadow: 0 3px 6px rgba(97, 97, 97 0.16), 0 3px 6px rgba(97, 97, 97 0.23);
 }
