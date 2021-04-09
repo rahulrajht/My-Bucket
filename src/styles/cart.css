@@ -1,3 +1,6 @@
+.maindiv-container {
+  display: flex;
+}
 .cartItem {
   width: 600px;
   display: flex;
@@ -62,4 +65,48 @@
 }
 .remove_btn:hover {
   color: cadetblue;
+}
+
+/* Price details */
+.checkout-container {
+  width: 500px;
+  border: 1px solid black;
+  padding: 1rem;
+}
+._35mLK5 {
+  background: #fff;
+  border-radius: 2px;
+  min-height: 47px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+}
+._3aPjap {
+  display: block;
+  text-transform: uppercase;
+  padding: 13px 24px;
+  font-weight: 500;
+  color: #878787;
+  min-height: 47px;
+  border-radius: 2px 2px 0 0;
+}
+
+._3aPjap > ._I_XQO {
+  padding: 0 24px;
+}
+.Ob17DV {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  align-items: flex-start;
+}
+.Ob17DV ._24KATy {
+  max-width: 68%;
+}
+.Ob17DV ._24KATy ._2npqm0 {
+  display: flex;
+  align-items: center;
+}
+._3LxTgx {
+  border-top: 1px dashed #e0e0e0;
+  font-weight: 500;
+  font-size: 18px;
 }
