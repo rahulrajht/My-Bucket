@@ -1,16 +1,19 @@
 import Cart from "./Cart";
 import { checkItemInCart } from "../utils/checkItemInCart";
 import { useCart } from "../context/cartContext";
-import { useScreen } from "../context/changeScreen";
+import { Link } from "react-router-dom";
+
 import "../styles/addcartbutton.css";
+import { useState } from "react";
 export const AddToCartButton = (item) => {
-  const { setScreen } = useScreen();
   const { cartItems, dispatchData } = useCart();
   const items = { ...item.item, count: 1 };
-
+  const [link, setLink] = useState("");
   function handleClick() {
-    if (checkItemInCart(cartItems, item.item.id)) setScreen(<Cart />);
-    else {
+    if (checkItemInCart(cartItems, item.item.id)) {
+      setLink("/cart");
+    } else {
+      setLink("/cart");
       dispatchData({
         type: "addCartItem",
         items
@@ -27,12 +30,14 @@ export const AddToCartButton = (item) => {
     return "Out of Stock";
   }
   return (
-    <button
-      disabled={!item.item.inStock}
-      onClick={handleClick}
-      className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
-    >
-      {getButtonText()}
-    </button>
+    <Link to={link}>
+      <button
+        disabled={!item.item.inStock}
+        onClick={handleClick}
+        className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
+      >
+        {getButtonText()}
+      </button>
+    </Link>
   );
 };
