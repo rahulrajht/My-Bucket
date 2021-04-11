@@ -19,7 +19,11 @@ export default function WIshListCart() {
               <img className="images" src={item.image} alt={item.title} />
               <Rating rt={item.ratings} />
               <div className="item_name"> {item.title} </div>
-              <Price price={item.price} discount={item.discount} />
+              <Price
+                count={item.count}
+                price={item.price}
+                discount={item.discount}
+              />
               <AddToCartButton item={item} />
               <WishlistButton item={item} />
             </div>
