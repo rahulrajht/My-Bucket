@@ -6,9 +6,15 @@ import Rating from "./Rating";
 
 export default function Cart() {
   const { cartItems, dispatchData } = useCart();
-  const [totalItem, setTotalItem] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(1);
+  let count = 0;
+  let price = 0;
+  let disc = 0;
 
+  function getItemCount(item) {
+    count += item.count;
+    price += item.price * item.count;
+    disc += ((item.price * item.discount) / 100) * item.count;
+  }
   function removeItem(items) {
     const id = items.id;
     dispatchData({
@@ -70,7 +76,8 @@ export default function Cart() {
                   </span>
                 </div>
                 <Price
-                  price={item.price * item.count}
+                  count={item.count}
+                  price={item.price}
                   discount={item.discount}
                 />
                 <div>
@@ -84,21 +91,23 @@ export default function Cart() {
             </div>
           ))}
         </div>
+        {cartItems.forEach(getItemCount)}
         <section className="checkout-container">
           <div className="_35mLK5">
             <span className="_3aPjap">Price details</span>
             <div className="_I_XQO">
               <div className="Ob17DV">
                 <div className="_24KATy">
-                  <div className="_2npqm0">Price (0 items)</div>
+                  <div className="_2npqm0">Price ({count} items)</div>
                 </div>
-                <span> ₹8,995</span>
+                <span> ₹{price.toFixed(2)}</span>
               </div>
+
               <div className="Ob17DV">
                 <div className="_24KATy">
                   <div className="_2npqm0">Discount</div>
                 </div>
-                <div className="_1YVZr_">− ₹3,760</div>
+                <div className="_1YVZr_">− ₹{disc.toFixed(2)}</div>
               </div>
               <div className="Ob17DV">
                 <div className="_24KATy">
@@ -119,15 +128,15 @@ export default function Cart() {
                         <div className="_24KATy">
                           <div className="_2npqm0"></div>
                         </div>
-                        <span> ₹5,235</span>
+                        <span> ₹{(price - disc).toFixed(2)}</span>
                       </div>
                     </div>
                   </span>
                 </div>
               </div>
-              <div className="_3s5O6i">You will save ₹3,760 on this order</div>
             </div>
           </div>
+          <button className="btn-add instock">Make Payment</button>
         </section>
       </div>
     );

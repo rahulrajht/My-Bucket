@@ -1,5 +1,6 @@
 .maindiv-container {
   display: flex;
+  justify-content: space-around;
 }
 .cartItem {
   width: 600px;
@@ -69,6 +70,7 @@
 
 /* Price details */
 .checkout-container {
+  margin-top: 1rem;
   width: 500px;
   border: 1px solid black;
   padding: 1rem;

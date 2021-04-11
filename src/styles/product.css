@@ -24,7 +24,6 @@
   padding: 1rem;
   flex-wrap: wrap;
   text-align: left;
-  justify-content: space-between;
 }
 .images {
   width: 100%;

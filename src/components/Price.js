@@ -1,8 +1,8 @@
 import "../styles/price.css";
 
-export default function Price({ price, discount }) {
+export default function Price({ price, discount, count }) {
   if (discount !== 0) {
-    let finalPrice = price - (price * discount) / 100;
+    let finalPrice = price * count - (price * count * discount) / 100;
     return (
       <>
         <div className="item_price">
@@ -25,7 +25,7 @@ export default function Price({ price, discount }) {
   } else {
     return (
       <>
-        <div className="item_price">₹ {price.toFixed(2)} </div>
+        <div className="item_price">₹ {price * count.toFixed(2)} </div>
       </>
     );
   }
