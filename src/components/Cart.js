@@ -16,7 +16,7 @@ export default function Cart() {
     disc += ((item.price * item.discount) / 100) * item.count;
   }
   function removeItem(items) {
-    const id = items.id;
+    const id = items._id;
     dispatchData({
       type: "removeCartItem",
       id
@@ -24,7 +24,7 @@ export default function Cart() {
   }
   function changeQty({ payload, data }) {
     console.log("item in ", data);
-    const id = data.id;
+    const id = data._id;
     const items = data;
     switch (payload) {
       case "inc":
@@ -51,7 +51,7 @@ export default function Cart() {
       <div className="maindiv-container">
         <div className="cartProducts">
           {cartItems.map((item) => (
-            <div className="cartItem" key={item.id}>
+            <div className="cartItem" key={item._id}>
               <div className="left">
                 <img className="images" src={item.image} alt={item.title} />
               </div>

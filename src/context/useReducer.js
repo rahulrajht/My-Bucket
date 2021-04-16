@@ -34,20 +34,24 @@ export function reducer(
       return {
         ...state,
         cartItems: cartItems.map((items) => {
-          return items.id === id ? { ...items, count: items.count + 1 } : items;
+          return items._id === id
+            ? { ...items, count: items.count + 1 }
+            : items;
         })
       };
     case DEC_QTY:
       if (items.count === 1) {
         return {
           ...state,
-          cartItems: cartItems.filter((items) => items.id !== id)
+          cartItems: cartItems.filter((items) => items._id !== id)
         };
       }
       return {
         ...state,
         cartItems: cartItems.map((items) => {
-          return items.id === id ? { ...items, count: items.count - 1 } : items;
+          return items._id === id
+            ? { ...items, count: items.count - 1 }
+            : items;
         })
       };
 
@@ -60,7 +64,7 @@ export function reducer(
     case REMOVE_CART_ITEM:
       return {
         ...state,
-        cartItems: cartItems.filter((items) => items.id !== id)
+        cartItems: cartItems.filter((items) => items._id !== id)
       };
     case ADD_CART_ITEM:
       return {
@@ -75,7 +79,7 @@ export function reducer(
     case REMOVE_WISHLIST_ITEM:
       return {
         ...state,
-        wishList: wishList.filter((items) => items.id !== id)
+        wishList: wishList.filter((items) => items._id !== id)
       };
     case ADD_WISHLIST_ITEM:
       return {

@@ -10,8 +10,8 @@ export const WishlistButton = (item) => {
   const [isTrue, setTrue] = useState(false);
   const handleClick = () => {
     setTrue(!isTrue);
-    if (checkItemInCart(wishList, item.item.id)) {
-      dispatchData({ type: "removeWishlistItem", id: item.item.id });
+    if (checkItemInCart(wishList, item.item._id)) {
+      dispatchData({ type: "removeWishlistItem", id: item.item._id });
     } else {
       dispatchData({ type: "addWishlistItem", items: item.item });
     }
