@@ -1,21 +1,23 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../styles/product.css";
 import { useUrl } from "../context/useUrl";
-import faker from "faker";
 import { AddToCartButton } from "./AddCartButton";
 import Rating from "./Rating";
 import Price from "./Price";
 import { useCart } from "../context/cartContext";
 import { WishlistButton } from "./WishListButton";
 import Filter from "./Filter";
+import Spinner from "./Spinner";
 
 export default function Product() {
   const { dispatchData } = useCart();
+  const [isLoadingTrue, setLoading] = useState(true);
   const { url } = useUrl();
   useEffect(() => {
     async function getData() {
       const response = await axios.get(url);
+      setLoading(false);
       const newCartItems = response.data.data;
       dispatchData({
         type: "setNewData",
@@ -25,10 +27,12 @@ export default function Product() {
     getData();
   }, [url, dispatchData]);
   const { filteredData } = useCart();
-
-  return (
+  return isLoadingTrue ? (
+    <Spinner />
+  ) : (
     <div className="main-container">
       <Filter />
+
       <div className="prod">
         {filteredData.map((item) => (
           <div className="card card--shadow" key={item._id}>

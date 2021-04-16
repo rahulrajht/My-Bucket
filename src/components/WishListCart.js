@@ -9,7 +9,7 @@ export default function WIshListCart() {
   const { wishList } = useCart();
 
   if (wishList.length === 0) {
-    return <h3> Wish List is Empty</h3>;
+    return <h3>There is no any Items in wish list.</h3>;
   } else {
     return (
       <>

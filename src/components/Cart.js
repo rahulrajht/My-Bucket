@@ -3,6 +3,7 @@ import "../styles/cart.css";
 import { useCart } from "../context/cartContext";
 import Price from "./Price";
 import Rating from "./Rating";
+import Spinner from "./Spinner";
 
 export default function Cart() {
   const { cartItems, dispatchData } = useCart();
@@ -45,7 +46,7 @@ export default function Cart() {
     }
   }
   if (cartItems.length === 0) {
-    return <h3> Cart is Empty</h3>;
+    return <h3>There is no amy Items in Cart.</h3>;
   } else {
     return (
       <div className="maindiv-container">

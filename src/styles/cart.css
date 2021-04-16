@@ -34,10 +34,12 @@
   flex-direction: row;
   width: 25px;
   margin: 1rem 0;
-  border: 1px solid gray;
+  border-radius: 5px;
   padding: 0.05rem 0.25rem;
   justify-content: center;
   flex-wrap: wrap;
+  cursor: pointer;
+  background: #8481a8;
 }
 .flex-row {
   display: flex;
@@ -50,7 +52,6 @@
   margin: 1rem 0rem;
   padding: 0.05rem 0.25rem;
   justify-content: center;
-  cursor: pointer;
 }
 
 .remove_btn {
