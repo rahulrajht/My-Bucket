@@ -93,40 +93,40 @@ export default function Cart() {
         </div>
         {cartItems.forEach(getItemCount)}
         <section className="checkout-container">
-          <div className="_35mLK5">
-            <span className="_3aPjap">Price details</span>
-            <div className="_I_XQO">
-              <div className="Ob17DV">
-                <div className="_24KATy">
-                  <div className="_2npqm0">Price ({count} items)</div>
+          <div className="outer">
+            <span className="price-title">Price details</span>
+            <div>
+              <div className="price-box">
+                <div className="size">
+                  <div className="count-value">Price ({count} items)</div>
                 </div>
                 <span> ₹{price.toFixed(2)}</span>
               </div>
 
-              <div className="Ob17DV">
-                <div className="_24KATy">
-                  <div className="_2npqm0">Discount</div>
+              <div className="price-box">
+                <div className="size">
+                  <div className="count-value">Discount</div>
                 </div>
-                <div className="_1YVZr_">− ₹{disc.toFixed(2)}</div>
+                <div>− ₹{disc.toFixed(2)}</div>
               </div>
-              <div className="Ob17DV">
-                <div className="_24KATy">
-                  <div className="_2npqm0">Delivery Charges</div>
+              <div className="price-box">
+                <div className="size">
+                  <div className="count-value">Delivery Charges</div>
                 </div>
                 <span>
-                  <span className="_1YVZr_ _33nGE1">Free</span>
+                  <span>Free</span>
                 </span>
               </div>
-              <div className="_3LxTgx">
-                <div className="Ob17DV">
-                  <div className="_24KATy">
-                    <div className="_2npqm0">Total Amount</div>
+              <div className="border">
+                <div className="price-box">
+                  <div className="size">
+                    <div className="count-value">Total Amount</div>
                   </div>
                   <span>
-                    <div className="_1dqRvU">
-                      <div className="Ob17DV _3X7Jj1">
-                        <div className="_24KATy">
-                          <div className="_2npqm0"></div>
+                    <div>
+                      <div className="price-box">
+                        <div className="size">
+                          <div className="count-value"></div>
                         </div>
                         <span> ₹{(price - disc).toFixed(2)}</span>
                       </div>

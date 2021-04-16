@@ -75,13 +75,13 @@
   border: 1px solid black;
   padding: 1rem;
 }
-._35mLK5 {
+.outer {
   background: #fff;
   border-radius: 2px;
   min-height: 47px;
   box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
 }
-._3aPjap {
+.price-title {
   display: block;
   text-transform: uppercase;
   padding: 13px 24px;
@@ -91,23 +91,20 @@
   border-radius: 2px 2px 0 0;
 }
 
-._3aPjap > ._I_XQO {
-  padding: 0 24px;
-}
-.Ob17DV {
+.price-box {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
   align-items: flex-start;
 }
-.Ob17DV ._24KATy {
+.price-box .size {
   max-width: 68%;
 }
-.Ob17DV ._24KATy ._2npqm0 {
+.price-box .size .count-value {
   display: flex;
   align-items: center;
 }
-._3LxTgx {
+.border {
   border-top: 1px dashed #e0e0e0;
   font-weight: 500;
   font-size: 18px;
