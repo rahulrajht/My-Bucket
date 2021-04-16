@@ -2,7 +2,7 @@ import { useContext, createContext, useState } from "react";
 export const urlContext = createContext();
 
 export function UrlProvider({ children }) {
-  const [url, setUrl] = useState("https://fakestoreapi.com/products");
+  const [url, setUrl] = useState("https://api.rahulgupta99.repl.co/products");
   return (
     <urlContext.Provider value={{ url, setUrl }}>
       {children}

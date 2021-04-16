@@ -11,13 +11,15 @@ export default function Nav() {
     <nav className="navbars">
       <div className="side-bar">
         <ul>
-          <li onClick={() => setUrl("https://fakestoreapi.com/products")}>
+          <li
+            onClick={() => setUrl("https://api.rahulgupta99.repl.co/products")}
+          >
             All
           </li>
           <li
             onClick={() =>
               setUrl(
-                "https://fakestoreapi.com/products/category/women clothing"
+                "https://api.rahulgupta99.repl.co/products/category/women clothing"
               )
             }
           >
@@ -25,21 +27,27 @@ export default function Nav() {
           </li>
           <li
             onClick={() =>
-              setUrl("https://fakestoreapi.com/products/category/men clothing")
+              setUrl(
+                "https://api.rahulgupta99.repl.co/products/category/men clothing"
+              )
             }
           >
             Men's
           </li>
           <li
             onClick={() =>
-              setUrl("https://fakestoreapi.com/products/category/electronics")
+              setUrl(
+                "https://api.rahulgupta99.repl.co/products/category/electronics"
+              )
             }
           >
             Electronics
           </li>
           <li
             onClick={() =>
-              setUrl("https://fakestoreapi.com/products/category/jewelery")
+              setUrl(
+                "https://api.rahulgupta99.repl.co/products/category/jewelery"
+              )
             }
           >
             Jewelery
