@@ -1,16 +1,19 @@
-import Cart from "./Cart";
 import { checkItemInCart } from "../utils/checkItemInCart";
 import { useCart } from "../context/cartContext";
 import { Link } from "react-router-dom";
 
 import "../styles/addcartbutton.css";
 import { useState } from "react";
+
 export const AddToCartButton = (item) => {
+  console.log(item.item._id);
+
   const { cartItems, dispatchData } = useCart();
-  const items = { ...item.item, count: 1 };
+  const items = item.item;
   const [link, setLink] = useState("");
+
   function handleClick() {
-    if (checkItemInCart(cartItems, item.item.id)) {
+    if (checkItemInCart(cartItems, item.item._id)) {
       setLink("/cart");
     } else {
       setLink("/cart");
@@ -23,7 +26,7 @@ export const AddToCartButton = (item) => {
 
   function getButtonText() {
     if (item.item.inStock) {
-      return checkItemInCart(cartItems, item.item.id)
+      return checkItemInCart(cartItems, item.item._id)
         ? "Go to Cart"
         : "Add to cart";
     }
