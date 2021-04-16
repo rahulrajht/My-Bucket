@@ -1,6 +1,7 @@
 .main-container {
   width: 960px;
   margin: 1rem auto;
+  height: 100%;
 }
 .prod {
   width: 960px;
@@ -24,6 +25,7 @@
   padding: 1rem;
   flex-wrap: wrap;
   text-align: left;
+  justify-content: flex-end;
 }
 .images {
   width: 100%;
