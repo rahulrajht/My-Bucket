@@ -9,6 +9,11 @@ export default function Nav() {
 
   return (
     <nav className="navbars">
+      <label class="label" for="toogle">
+        {" "}
+        &#9776;{" "}
+      </label>
+      <input type="checkbox" id="toogle" />
       <div className="side-bar">
         <ul>
           <li

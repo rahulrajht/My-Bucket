@@ -110,3 +110,44 @@
   font-weight: 500;
   font-size: 18px;
 }
+
+@media only screen and (max-width: 960px) {
+  .maindiv-container {
+    flex-direction: column;
+  }
+  .checkout-container {
+    margin: 1rem;
+    width: 90%;
+    border: 1px solid black;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .maindiv-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .cartProducts {
+    width: 100%;
+  }
+  .cartItem {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #4b5563;
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  .cartItem > .left > .images {
+    width: 80%;
+    object-fit: contain;
+  }
+  .right {
+    text-align: left;
+    width: fit-content;
+  }
+}

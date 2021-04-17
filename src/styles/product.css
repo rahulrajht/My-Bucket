@@ -37,3 +37,27 @@
   font-weight: 550;
   color: rgb(37, 37, 37);
 }
+
+@media only screen and (max-width: 650px) {
+  .main-container {
+    width: 100%;
+  }
+  .prod {
+    width: 100%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 420px) {
+  .main-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .prod {
+    width: 100%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
