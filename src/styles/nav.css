@@ -43,8 +43,11 @@
 
 .side-bar > ul > li:hover {
   transition: all 0.6s ease-out;
-  background-color: #232f34;
-  color: #dbdbdf;
+  background-color: white;
+  color: #232f34;
+}
+.side-bar > ul > li:visited {
+  display: none;
 }
 .cart {
   width: 40px;
@@ -96,6 +99,10 @@
   .side-bar > ul {
     display: none;
   }
+  .side-bar > ul > li:hover {
+    background-color: white;
+    color: #232f34;
+  }
   #toogle:checked ~ .side-bar > ul {
     display: flex;
     position: absolute;
@@ -106,6 +113,7 @@
     background: linear-gradient(145deg, #f5f5f5, #504a9e);
     align-items: center;
     height: fit-content;
+    z-index: 1;
   }
   #toogle:checked ~ ul {
     display: inherit;
