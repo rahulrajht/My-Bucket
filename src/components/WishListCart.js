@@ -12,7 +12,7 @@ export default function WIshListCart() {
     return <h3>There is no any Items in wish list.</h3>;
   } else {
     return (
-      <>
+      <div className="main-container">
         <div className="prod">
           {wishList.map((item) => (
             <div className="card card--shadow" key={item.id}>
@@ -29,7 +29,7 @@ export default function WIshListCart() {
             </div>
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }

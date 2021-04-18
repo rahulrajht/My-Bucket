@@ -52,12 +52,31 @@
 @media only screen and (max-width: 420px) {
   .main-container {
     width: 90%;
-    margin: 0 auto;
+    margin: 0;
   }
   .prod {
     width: 100%;
-    margin: 1rem auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    margin: 1rem 0.5rem;
+    width: 90%;
+    color: #4b5563;
+    padding: 1rem 0.5rem;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: flex-end;
+  }
+
+  .images {
+    width: 80%;
+    height: 200px;
+    object-fit: contain;
   }
 }
