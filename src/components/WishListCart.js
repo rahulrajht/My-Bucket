@@ -5,11 +5,19 @@ import Price from "./Price";
 import Rating from "./Rating";
 import { AddToCartButton } from "./AddCartButton";
 import { WishlistButton } from "./WishListButton";
+import { Link } from "react-router-dom";
 export default function WIshListCart() {
   const { wishList } = useCart();
 
   if (wishList.length === 0) {
-    return <h3>There is no any Items in wish list.</h3>;
+    return (
+      <div className="no-items">
+        <h3 style={{ margin: "2rem" }}>There Is No Any Items In Wish List.</h3>
+        <Link className="link" to="/">
+          Go To Home Page{" "}
+        </Link>
+      </div>
+    );
   } else {
     return (
       <div className="main-container">

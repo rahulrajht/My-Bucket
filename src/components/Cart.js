@@ -48,8 +48,10 @@ export default function Cart() {
   if (cartItems.length === 0) {
     return (
       <div className="no-items">
-        <h3 style={{ margin: "2rem" }}>There is no any Items in Cart.</h3>
-        <Link to="/">Go to Home Page </Link>
+        <h3 style={{ margin: "2rem" }}>It Seems Your Cart Is Empty.</h3>
+        <Link className="link" to="/">
+          Go To Home Page{" "}
+        </Link>
       </div>
     );
   } else {

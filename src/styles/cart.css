@@ -110,10 +110,8 @@
   font-weight: 500;
   font-size: 18px;
 }
-.no-items > Link {
-  list-style: none;
+.no-items > .link {
   text-decoration: none;
-  background-color: red;
 }
 
 @media only screen and (max-width: 960px) {
