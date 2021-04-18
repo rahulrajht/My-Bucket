@@ -6,8 +6,6 @@ import "../styles/addcartbutton.css";
 import { useState } from "react";
 
 export const AddToCartButton = (item) => {
-  console.log(item.item._id);
-
   const { cartItems, dispatchData } = useCart();
   const items = item.item;
   const [link, setLink] = useState("");
