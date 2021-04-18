@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "../styles/cart.css";
 import { useCart } from "../context/cartContext";
 import Price from "./Price";
 import Rating from "./Rating";
-import Spinner from "./Spinner";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cartItems, dispatchData } = useCart();
@@ -46,7 +46,12 @@ export default function Cart() {
     }
   }
   if (cartItems.length === 0) {
-    return <h3>There is no amy Items in Cart.</h3>;
+    return (
+      <div className="no-items">
+        <h3 style={{ margin: "2rem" }}>There is no any Items in Cart.</h3>
+        <Link to="/">Go to Home Page </Link>
+      </div>
+    );
   } else {
     return (
       <div className="maindiv-container">

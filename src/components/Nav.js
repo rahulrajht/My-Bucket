@@ -9,7 +9,7 @@ export default function Nav() {
 
   return (
     <nav className="navbars">
-      <label class="label" for="toogle">
+      <label className="label" htmlFor="toogle">
         {" "}
         &#9776;{" "}
       </label>
