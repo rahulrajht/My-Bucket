@@ -99,10 +99,6 @@
   .side-bar > ul {
     display: none;
   }
-  .side-bar > ul > li:hover {
-    background-color: white;
-    color: #232f34;
-  }
   #toogle:checked ~ .side-bar > ul {
     display: flex;
     position: absolute;
