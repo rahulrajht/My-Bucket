@@ -1,6 +1,9 @@
 .label {
   display: none;
 }
+.label-hide {
+  display: inline;
+}
 #toogle {
   display: none;
 }
@@ -99,7 +102,7 @@
   .side-bar > ul {
     display: none;
   }
-  #toogle:checked ~ .side-bar > ul {
+  #toogle:checked ~ .label-hide > .side-bar > ul {
     display: flex;
     position: absolute;
     flex-direction: column;

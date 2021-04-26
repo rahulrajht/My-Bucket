@@ -11,54 +11,58 @@ export default function Nav() {
     <nav className="navbars">
       <label className="label" htmlFor="toogle">
         {" "}
-        &#9776;{" "}
-      </label>
+        &#9776;
+      </label>{" "}
       <input type="checkbox" id="toogle" />
-      <div className="side-bar">
-        <ul>
-          <li
-            onClick={() => setUrl("https://api.rahulgupta99.repl.co/products")}
-          >
-            All
-          </li>
-          <li
-            onClick={() =>
-              setUrl(
-                "https://api.rahulgupta99.repl.co/products/category/women clothing"
-              )
-            }
-          >
-            Women's
-          </li>
-          <li
-            onClick={() =>
-              setUrl(
-                "https://api.rahulgupta99.repl.co/products/category/men clothing"
-              )
-            }
-          >
-            Men's
-          </li>
-          <li
-            onClick={() =>
-              setUrl(
-                "https://api.rahulgupta99.repl.co/products/category/electronics"
-              )
-            }
-          >
-            Electronics
-          </li>
-          <li
-            onClick={() =>
-              setUrl(
-                "https://api.rahulgupta99.repl.co/products/category/jewelery"
-              )
-            }
-          >
-            Jewelery
-          </li>
-        </ul>
-      </div>
+      <label className="label-hide" htmlFor="toogle">
+        <div className="side-bar">
+          <ul>
+            <li
+              onClick={() =>
+                setUrl("https://api.rahulgupta99.repl.co/products")
+              }
+            >
+              All
+            </li>
+            <li
+              onClick={() =>
+                setUrl(
+                  "https://api.rahulgupta99.repl.co/products/category/women clothing"
+                )
+              }
+            >
+              Women's
+            </li>
+            <li
+              onClick={() =>
+                setUrl(
+                  "https://api.rahulgupta99.repl.co/products/category/men clothing"
+                )
+              }
+            >
+              Men's
+            </li>
+            <li
+              onClick={() =>
+                setUrl(
+                  "https://api.rahulgupta99.repl.co/products/category/electronics"
+                )
+              }
+            >
+              Electronics
+            </li>
+            <li
+              onClick={() =>
+                setUrl(
+                  "https://api.rahulgupta99.repl.co/products/category/jewelery"
+                )
+              }
+            >
+              Jewelery
+            </li>
+          </ul>
+        </div>
+      </label>
       <ul>
         <div style={{ position: "relative", marginLeft: "5px" }}>
           <Link to="/cart" className="cart">

@@ -8,7 +8,6 @@ import { WishlistButton } from "./WishListButton";
 import { Link } from "react-router-dom";
 export default function WIshListCart() {
   const { wishList } = useCart();
-
   if (wishList.length === 0) {
     return (
       <div className="no-items">

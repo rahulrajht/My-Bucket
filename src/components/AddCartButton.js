@@ -6,7 +6,7 @@ import "../styles/addcartbutton.css";
 import { useState } from "react";
 
 export const AddToCartButton = (item) => {
-  const { cartItems, dispatchData } = useCart();
+  const { cartItems, dispatchData, wishList } = useCart();
   const items = item.item;
   const [link, setLink] = useState("");
 
@@ -30,15 +30,28 @@ export const AddToCartButton = (item) => {
     }
     return "Out of Stock";
   }
-  return (
-    <Link to={link}>
-      <button
-        disabled={!item.item.inStock}
-        onClick={handleClick}
-        className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
-      >
-        {getButtonText()}
-      </button>
-    </Link>
-  );
+  if (checkItemInCart(wishList, item.item._id)) {
+    return (
+      <Link to="/cart">
+        <button
+          disabled={!item.item.inStock}
+          onClick={handleClick}
+          className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
+        >
+          {getButtonText()}
+        </button>
+      </Link>
+    );
+  } else
+    return (
+      <Link to={link}>
+        <button
+          disabled={!item.item.inStock}
+          onClick={handleClick}
+          className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
+        >
+          {getButtonText()}
+        </button>
+      </Link>
+    );
 };
