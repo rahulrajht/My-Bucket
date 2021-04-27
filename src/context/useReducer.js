@@ -15,6 +15,7 @@ const REMOVE_WISHLIST_ITEM = "removeWishlistItem";
 const SET_WISHLIST_ITEMS = "setWishlistItems";
 const HIGH_TO_LOW = "highToLow";
 const LOW_TO_HIGH = "lowToHigh";
+const ADD_CART_ITEM_AND_REMOVE_FROM_WISHLIST = "addCartItem&removeWishlistItem";
 
 export function reducer(
   state,
@@ -25,7 +26,8 @@ export function reducer(
     filteredData,
     fetchedCartItems,
     fetchedWishlist,
-    newCartItems
+    newCartItems,
+    wishListItem
   }
 ) {
   const { cartItems, wishList } = state;
@@ -85,6 +87,12 @@ export function reducer(
       return {
         ...state,
         wishList: wishList.concat(items)
+      };
+    case ADD_CART_ITEM_AND_REMOVE_FROM_WISHLIST:
+      return {
+        ...state,
+        cartItems: cartItems.concat(wishListItem.data),
+        wishList: wishList.filter((items) => items._id !== wishListItem.id)
       };
     case SET_NEW_DATA:
       return {

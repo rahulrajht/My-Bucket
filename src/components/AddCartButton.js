@@ -3,18 +3,12 @@ import { useCart } from "../context/cartContext";
 import { Link } from "react-router-dom";
 
 import "../styles/addcartbutton.css";
-import { useState } from "react";
 
 export const AddToCartButton = (item) => {
-  const { cartItems, dispatchData, wishList } = useCart();
+  const { cartItems, dispatchData } = useCart();
   const items = item.item;
-  const [link, setLink] = useState("");
-
   function handleClick() {
-    if (checkItemInCart(cartItems, item.item._id)) {
-      setLink("/cart");
-    } else {
-      setLink("/cart");
+    if (!checkItemInCart(cartItems, item.item._id)) {
       dispatchData({
         type: "addCartItem",
         items
@@ -28,30 +22,17 @@ export const AddToCartButton = (item) => {
         ? "Go to Cart"
         : "Add to cart";
     }
-    return "Out of Stock";
+    return "Out Of Stock";
   }
-  if (checkItemInCart(wishList, item.item._id)) {
-    return (
-      <Link to="/cart">
-        <button
-          disabled={!item.item.inStock}
-          onClick={handleClick}
-          className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
-        >
-          {getButtonText()}
-        </button>
-      </Link>
-    );
-  } else
-    return (
-      <Link to={link}>
-        <button
-          disabled={!item.item.inStock}
-          onClick={handleClick}
-          className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
-        >
-          {getButtonText()}
-        </button>
-      </Link>
-    );
+  return (
+    <Link to={getButtonText() === "Go to Cart" ? "/cart" : ""}>
+      <button
+        disabled={!item.item.inStock}
+        onClick={handleClick}
+        className={`btn-add ${!item.item.inStock ? "out" : "instock"}`}
+      >
+        {getButtonText()}
+      </button>
+    </Link>
+  );
 };

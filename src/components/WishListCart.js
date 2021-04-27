@@ -4,6 +4,7 @@ import { useCart } from "../context/cartContext";
 import Price from "./Price";
 import Rating from "./Rating";
 import { AddToCartButton } from "./AddCartButton";
+import MoveToCart from "./MoveToCart";
 import { WishlistButton } from "./WishListButton";
 import { Link } from "react-router-dom";
 export default function WIshListCart() {
@@ -31,7 +32,7 @@ export default function WIshListCart() {
                 price={item.price}
                 discount={item.discount}
               />
-              <AddToCartButton item={item} />
+              <MoveToCart item={item} />
               <WishlistButton item={item} />
             </div>
           ))}
