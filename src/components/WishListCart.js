@@ -3,7 +3,7 @@ import "../styles/product.css";
 import { useCart, Price, Rating, WishlistButton, MoveToCart } from "../index";
 import { Link } from "react-router-dom";
 
-export default function WIshListCart() {
+export default function WishListCart() {
   const { wishList } = useCart();
   if (wishList.length === 0) {
     return (
