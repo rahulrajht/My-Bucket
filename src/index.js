@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { CartProvider } from "./context/cartContext";
 
-export { useUrl } from "./context/useUrl";
+export { useUrl, UrlProvider } from "./context/useUrl";
 export { useCart } from "./context/cartContext";
 export { default as Price } from "./components/Price";
 export { default as Rating } from "./components/Rating";
@@ -14,6 +14,11 @@ export { default as Spinner } from "./components/Spinner";
 export { default as AddToCartButton } from "./components/AddCartButton";
 export { default as WishlistButton } from "./components/WishListButton";
 export { default as MoveToCart } from "./components/MoveToCart";
+export { default as Error } from "./components/Error";
+export { default as WishListCart } from "./components/WishListCart";
+export { default as Product } from "./components/Product";
+export { default as Cart } from "./components/Cart";
+export { default as Nav } from "./components/Nav";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

@@ -1,25 +1,26 @@
 import "./styles.css";
-import Nav from "./components/Nav";
-import { UrlProvider } from "./context/useUrl";
 import { Route, Switch } from "react-router-dom";
-import Cart from "./components/Cart";
-import Product from "./components/Product";
-import WIshListCart from "./components/WishListCart";
+import { Cart, Product, WishListCart, Error, Nav, UrlProvider } from "./index";
 
 export default function App() {
   return (
     <div className="App">
       <UrlProvider>
-        <Nav />
         <Switch>
           <Route exact path="/">
+            <Nav />
             <Product />
           </Route>
           <Route exact path="/cart">
+            <Nav />
             <Cart />
           </Route>
           <Route exact path="/wishlist">
-            <WIshListCart />
+            <Nav />
+            <WishListCart />
+          </Route>
+          <Route exact path="*">
+            <Error />
           </Route>
         </Switch>
       </UrlProvider>
