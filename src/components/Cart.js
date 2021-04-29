@@ -61,10 +61,14 @@ export default function Cart() {
         <div className="cartProducts">
           {cartItems.map((item) => (
             <div className="cartItem" key={item._id}>
-              <div className="left">
-                <img className="images" src={item.image} alt={item.title} />
+              <div className="left-container">
+                <img
+                  className="cartItem-images"
+                  src={item.image}
+                  alt={item.title}
+                />
               </div>
-              <div className="right">
+              <div className="right-container">
                 <h4 className="item_name"> {item.title} </h4>
                 <Rating rt={item.ratings} />
                 <div className="flex-row">

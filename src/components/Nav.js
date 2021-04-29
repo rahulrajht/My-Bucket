@@ -15,7 +15,7 @@ export default function Nav() {
       <input type="checkbox" id="toogle" />
       <label className="label-hide" htmlFor="toogle">
         <div className="side-bar">
-          <ul>
+          <ul className="side-bar-list-container">
             <li
               onClick={() =>
                 setUrl("https://api.rahulgupta99.repl.co/products")
@@ -62,14 +62,14 @@ export default function Nav() {
           </ul>
         </div>
       </label>
-      <ul>
-        <div>
+      <ul className="list-container">
+        <div className="wrapper-container">
           <Link to="/cart" className="cart">
             {" "}
           </Link>
           <span className="span-img">{cartItems.length}</span>
         </div>
-        <div>
+        <div className="wrapper-container">
           <Link to="/wishlist" className="wishlist">
             {" "}
           </Link>
