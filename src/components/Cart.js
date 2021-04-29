@@ -6,6 +6,9 @@ import Rating from "./Rating";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
+  const REMOVE_CART_ITEM = "removeCartItem";
+  const INC_QTY = "incQty";
+  const DEC_QTY = "decQty";
   const { cartItems, dispatchData } = useCart();
   let count = 0;
   let price = 0;
@@ -19,7 +22,7 @@ export default function Cart() {
   function removeItem(items) {
     const id = items._id;
     dispatchData({
-      type: "removeCartItem",
+      type: REMOVE_CART_ITEM,
       id
     });
   }
@@ -30,13 +33,13 @@ export default function Cart() {
     switch (payload) {
       case "inc":
         dispatchData({
-          type: "incQty",
+          type: INC_QTY,
           id
         });
         break;
       case "dec":
         dispatchData({
-          type: "decQty",
+          type: DEC_QTY,
           id,
           items
         });

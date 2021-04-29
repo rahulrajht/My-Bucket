@@ -2,6 +2,8 @@ import { useCart } from "../context/cartContext";
 import "../styles/filter.css";
 export default function Filter() {
   const { filteredData, dispatchData } = useCart();
+  const HIGH_TO_LOW = "highToLow";
+  const LOW_TO_HIGH = "lowToHigh";
   return (
     <nav className="filter-nav">
       Sort By Price
@@ -9,7 +11,7 @@ export default function Filter() {
         <input
           type="radio"
           name="sort"
-          onChange={() => dispatchData({ type: "highToLow", filteredData })}
+          onChange={() => dispatchData({ type: HIGH_TO_LOW, filteredData })}
         ></input>{" "}
         High to Low
       </label>
@@ -17,7 +19,7 @@ export default function Filter() {
         <input
           type="radio"
           name="sort"
-          onChange={() => dispatchData({ type: "lowToHigh", filteredData })}
+          onChange={() => dispatchData({ type: LOW_TO_HIGH, filteredData })}
         ></input>{" "}
         Low to High
       </label>

@@ -6,11 +6,13 @@ import "../styles/addcartbutton.css";
 export default function MoveToCart(item) {
   const { cartItems, dispatchData } = useCart();
   const wishListItem = { data: item.item, id: item.item._id };
+  const ADD_CART_ITEM_AND_REMOVE_FROM_WISHLIST =
+    "addCartItem&removeWishlistItem";
 
   function handleClick() {
     if (!checkItemInCart(cartItems, item.item._id)) {
       dispatchData({
-        type: "addCartItem&removeWishlistItem",
+        type: ADD_CART_ITEM_AND_REMOVE_FROM_WISHLIST,
         wishListItem
       });
     }

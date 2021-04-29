@@ -13,6 +13,7 @@ import Spinner from "./Spinner";
 export default function Product() {
   const { dispatchData } = useCart();
   const [isLoadingTrue, setLoading] = useState(true);
+  const SET_NEW_DATA = "setNewData";
   const { url } = useUrl();
   useEffect(() => {
     async function getData() {
@@ -20,7 +21,7 @@ export default function Product() {
       setLoading(false);
       const newCartItems = response.data.data;
       dispatchData({
-        type: "setNewData",
+        type: SET_NEW_DATA,
         newCartItems
       });
     }

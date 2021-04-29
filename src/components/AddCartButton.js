@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 import "../styles/addcartbutton.css";
 
 export const AddToCartButton = (item) => {
+  const ADD_CART_ITEM = "addCartItem";
   const { cartItems, dispatchData } = useCart();
   const items = item.item;
   function handleClick() {
     if (!checkItemInCart(cartItems, item.item._id)) {
       dispatchData({
-        type: "addCartItem",
+        type: ADD_CART_ITEM,
         items
       });
     }

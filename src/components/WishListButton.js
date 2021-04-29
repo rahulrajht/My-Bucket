@@ -8,12 +8,16 @@ import { useState } from "react";
 export const WishlistButton = (item) => {
   const { wishList, dispatchData } = useCart();
   const [isTrue, setTrue] = useState(false);
+
+  const ADD_WISHLIST_ITEM = "addWishlistItem";
+  const REMOVE_WISHLIST_ITEM = "removeWishlistItem";
+
   const handleClick = () => {
     setTrue(!isTrue);
     if (checkItemInCart(wishList, item.item._id)) {
-      dispatchData({ type: "removeWishlistItem", id: item.item._id });
+      dispatchData({ type: REMOVE_WISHLIST_ITEM, id: item.item._id });
     } else {
-      dispatchData({ type: "addWishlistItem", items: item.item });
+      dispatchData({ type: ADD_WISHLIST_ITEM, items: item.item });
     }
   };
   return (

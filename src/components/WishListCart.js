@@ -3,7 +3,6 @@ import "../styles/product.css";
 import { useCart } from "../context/cartContext";
 import Price from "./Price";
 import Rating from "./Rating";
-import { AddToCartButton } from "./AddCartButton";
 import MoveToCart from "./MoveToCart";
 import { WishlistButton } from "./WishListButton";
 import { Link } from "react-router-dom";
