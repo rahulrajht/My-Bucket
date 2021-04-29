@@ -67,7 +67,10 @@
   background-size: 30px;
   box-shadow: 0 3px 6px rgba(97, 97, 97 0.16), 0 3px 6px rgba(97, 97, 97 0.23);
 }
-
+.wrapper-container {
+  position: relative;
+  marginleft: 5px;
+}
 .span-img {
   font-size: 16px;
   color: #dfdcdc;

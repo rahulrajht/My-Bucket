@@ -3,3 +3,12 @@
   text-align: left;
   margin-top: 5px;
 }
+.original-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 2px;
+}
+.discount {
+  color: green;
+}

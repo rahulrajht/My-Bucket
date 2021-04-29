@@ -7,18 +7,8 @@ export default function Price({ price, discount, count }) {
       <>
         <div className="item_price">
           ₹ {finalPrice.toFixed(2)}{" "}
-          <span
-            style={{
-              textDecoration: "line-through",
-              fontSize: "14px",
-              color: "gray",
-              marginRight: "2px"
-            }}
-          >
-            {" "}
-            {price}{" "}
-          </span>{" "}
-          <span style={{ color: "green" }}> {discount}% off</span>
+          <span className="original-price"> {price} </span>{" "}
+          <span className="discount"> {discount}% off</span>
         </div>
       </>
     );

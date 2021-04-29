@@ -63,13 +63,13 @@ export default function Nav() {
         </div>
       </label>
       <ul>
-        <div style={{ position: "relative", marginLeft: "5px" }}>
+        <div>
           <Link to="/cart" className="cart">
             {" "}
           </Link>
           <span className="span-img">{cartItems.length}</span>
         </div>
-        <div style={{ position: "relative", marginLeft: "5px" }}>
+        <div>
           <Link to="/wishlist" className="wishlist">
             {" "}
           </Link>
