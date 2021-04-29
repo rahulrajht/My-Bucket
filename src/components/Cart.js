@@ -69,7 +69,7 @@ export default function Cart() {
                 />
               </div>
               <div className="right-container">
-                <h4 className="item_name"> {item.title} </h4>
+                <p className="item_name"> {item.title} </p>
                 <Rating rt={item.ratings} />
                 <div className="flex-row">
                   <span

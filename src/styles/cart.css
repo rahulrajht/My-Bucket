@@ -1,3 +1,7 @@
+* {
+  --button-background: #8481a8;
+  --shadow-color: rgb(0 0 0 / 20%);
+}
 .maindiv-container {
   display: flex;
   justify-content: space-around;
@@ -17,13 +21,13 @@
   object-fit: contain;
 }
 .item_name {
-  font-weight: 550;
-  color: rgb(37, 37, 37);
+  margin-top: 0rem;
+  margin-bottom: 0.25rem;
 }
 
 .left-container {
-  margin-right: 5px;
-  width: 100px;
+  margin-right: 0.5rem;
+  width: 6rem;
 }
 .right-container {
   text-align: left;
@@ -32,14 +36,14 @@
 .btn-size {
   display: flex;
   flex-direction: row;
-  width: 25px;
+  width: 1.5rem;
   margin: 1rem 0;
   border-radius: 5px;
   padding: 0.05rem 0.25rem;
   justify-content: center;
   flex-wrap: wrap;
   cursor: pointer;
-  background: #8481a8;
+  background: var(--button-background);
 }
 .flex-row {
   display: flex;
@@ -80,23 +84,23 @@
 .outer {
   background: #fff;
   border-radius: 2px;
-  min-height: 47px;
-  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+  min-height: 2rem;
+  box-shadow: 0 1px 1px 0 var(--shadow-color);
 }
 .price-title {
   display: block;
   text-transform: uppercase;
-  padding: 13px 24px;
+  padding: 0.5rem 1rem;
   font-weight: 500;
   color: #878787;
-  min-height: 47px;
+  min-height: 2rem;
   border-radius: 2px 2px 0 0;
 }
 
 .price-box {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 1rem 0;
   align-items: flex-start;
 }
 .price-box .size {
@@ -109,7 +113,7 @@
 .border {
   border-top: 1px dashed #e0e0e0;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 
 .link {

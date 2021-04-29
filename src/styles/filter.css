@@ -17,8 +17,6 @@ input {
 }
 @media only screen and (max-width: 420px) {
   .filter-nav {
-    width: max-content;
-    margin: 1rem auto;
     flex-direction: column;
     text-align: center;
   }
