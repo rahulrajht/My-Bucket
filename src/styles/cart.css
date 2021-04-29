@@ -111,8 +111,12 @@
   font-weight: 500;
   font-size: 18px;
 }
+
 .no-items > .link {
   text-decoration: none;
+}
+.no-items > h3 {
+  margin: 2rem;
 }
 
 @media only screen and (max-width: 960px) {

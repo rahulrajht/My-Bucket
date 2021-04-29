@@ -8,7 +8,7 @@ export default function WIshListCart() {
   if (wishList.length === 0) {
     return (
       <div className="no-items">
-        <h3 style={{ margin: "2rem" }}>There Is No Any Items In Wish List.</h3>
+        <h3>There Is No Any Items In Wish List.</h3>
         <Link className="link" to="/">
           Go To Home Page{" "}
         </Link>
