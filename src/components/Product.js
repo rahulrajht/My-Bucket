@@ -1,14 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../styles/product.css";
-import { useUrl } from "../context/useUrl";
-import { AddToCartButton } from "./AddCartButton";
-import Rating from "./Rating";
-import Price from "./Price";
-import { useCart } from "../context/cartContext";
-import { WishlistButton } from "./WishListButton";
-import Filter from "./Filter";
-import Spinner from "./Spinner";
+import {
+  useUrl,
+  Rating,
+  Price,
+  useCart,
+  Filter,
+  Spinner,
+  AddToCartButton,
+  WishlistButton
+} from "../index";
 
 export default function Product() {
   const { dispatchData } = useCart();

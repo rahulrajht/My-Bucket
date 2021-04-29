@@ -1,11 +1,10 @@
-import { checkItemInCart } from "../utils/checkItemInCart";
-import { useCart } from "../context/cartContext";
+import { checkItemInCart, useCart } from "../index";
 import wish from "../images/wish.png";
 import redwish from "../images/redwish.png";
 import "../styles/wishList.css";
 import { useState } from "react";
 
-export const WishlistButton = (item) => {
+export default function WishlistButton(item) {
   const { wishList, dispatchData } = useCart();
   const [isTrue, setTrue] = useState(false);
 
@@ -28,4 +27,4 @@ export const WishlistButton = (item) => {
       alt=" "
     />
   );
-};
+}

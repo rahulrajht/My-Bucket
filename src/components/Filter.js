@@ -1,9 +1,11 @@
-import { useCart } from "../context/cartContext";
+import { useCart } from "../index";
 import "../styles/filter.css";
+
 export default function Filter() {
   const { filteredData, dispatchData } = useCart();
   const HIGH_TO_LOW = "highToLow";
   const LOW_TO_HIGH = "lowToHigh";
+
   return (
     <div className="filter-nav">
       Sort By Price

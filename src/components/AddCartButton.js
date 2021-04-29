@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "../styles/addcartbutton.css";
 
-export const AddToCartButton = (item) => {
+export default function AddToCartButton(item) {
   const ADD_CART_ITEM = "addCartItem";
   const { cartItems, dispatchData } = useCart();
   const items = item.item;
@@ -36,4 +36,4 @@ export const AddToCartButton = (item) => {
       </button>
     </Link>
   );
-};
+}

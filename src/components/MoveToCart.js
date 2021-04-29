@@ -1,5 +1,4 @@
-import { checkItemInCart } from "../utils/checkItemInCart";
-import { useCart } from "../context/cartContext";
+import { useCart, checkItemInCart } from "../index";
 
 import "../styles/addcartbutton.css";
 

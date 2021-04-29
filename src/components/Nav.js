@@ -1,10 +1,9 @@
 import "../styles/nav.css";
-import { useUrl } from "../context/useUrl";
-import { useCart } from "../context/cartContext";
+import { useUrl, useCart } from "../index";
 import { Link } from "react-router-dom";
+
 export default function Nav() {
   const { wishList, cartItems } = useCart();
-
   const { setUrl } = useUrl();
 
   return (

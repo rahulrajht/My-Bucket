@@ -1,11 +1,8 @@
 import React from "react";
 import "../styles/product.css";
-import { useCart } from "../context/cartContext";
-import Price from "./Price";
-import Rating from "./Rating";
-import MoveToCart from "./MoveToCart";
-import { WishlistButton } from "./WishListButton";
+import { useCart, Price, Rating, WishlistButton, MoveToCart } from "../index";
 import { Link } from "react-router-dom";
+
 export default function WIshListCart() {
   const { wishList } = useCart();
   if (wishList.length === 0) {
