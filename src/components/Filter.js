@@ -5,7 +5,7 @@ export default function Filter() {
   const HIGH_TO_LOW = "highToLow";
   const LOW_TO_HIGH = "lowToHigh";
   return (
-    <nav className="filter-nav">
+    <div className="filter-nav">
       Sort By Price
       <label>
         <input
@@ -23,6 +23,6 @@ export default function Filter() {
         ></input>{" "}
         Low to High
       </label>
-    </nav>
+    </div>
   );
 }
