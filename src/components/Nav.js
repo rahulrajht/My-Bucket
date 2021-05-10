@@ -4,18 +4,22 @@ import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
 
 export default function Nav() {
-  const { logout } = useAuth();
+  const { logout, dispatchData } = useAuth();
   const { wishList, cartItems } = useCart();
   const { setUrl } = useUrl();
   const history = useHistory();
   const user = localStorage.getItem("token");
-
+  const SET_USER = "setUser";
   async function LogOut() {
     try {
       await logout();
+      dispatchData({
+        type: SET_USER,
+        currentUser: null
+      });
       history.push("/");
     } catch {
-      console.log("error in logout");
+      console.log("Something went wrong.");
     }
   }
 

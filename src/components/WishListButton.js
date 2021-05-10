@@ -9,7 +9,7 @@ import { Spinner } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 export default function WishlistButton(item) {
-  const { wishList, dispatchData } = useCart();
+  const { dispatchData } = useCart();
   const [isTrue, setTrue] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const ADD_WISHLIST_ITEM = "addWishlistItem";
@@ -39,7 +39,9 @@ export default function WishlistButton(item) {
     }
   }
 
-  return (
+  return isLoading ? (
+    <Spinner animation="border" size="sm" />
+  ) : (
     <img
       onClick={handleClick}
       className="wishImage"

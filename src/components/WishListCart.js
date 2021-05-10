@@ -9,13 +9,12 @@ export default function WishListCart() {
   const [isLoading, setLoading] = useState(true);
   const { wishList, dispatchData } = useCart();
   const email = JSON.parse(localStorage.getItem("email"));
-  console.log(email);
+
   const url = "https://api-1.rahulgupta99.repl.co/wishlist/getitems/" + email;
 
   useEffect(() => {
     async function getData() {
       const res = await axios.get(url);
-      console.log(res);
       if (res.status === 200) {
         setLoading(false);
         dispatchData({

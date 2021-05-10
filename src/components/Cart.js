@@ -67,7 +67,7 @@ export default function Cart() {
         dispatchData({ type: DEC_QTY, id, items });
         break;
       default:
-        console.log(data);
+        console.log("No matches found");
     }
   }
 
