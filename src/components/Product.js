@@ -15,17 +15,19 @@ import {
 export default function Product() {
   const { dispatchData } = useCart();
   const [isLoadingTrue, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
   const SET_NEW_DATA = "setNewData";
   const { url } = useUrl();
   useEffect(() => {
     async function getData() {
       const response = await axios.get(url);
       setLoading(false);
-      const newCartItems = response.data.data;
-      dispatchData({
-        type: SET_NEW_DATA,
-        newCartItems
-      });
+      setProducts(response.data.data);
+      // const newCartItems = response.data.data;
+      // dispatchData({
+      //   type: SET_NEW_DATA,
+      //   newCartItems
+      // });
     }
     getData();
   }, [url, dispatchData]);
@@ -37,7 +39,7 @@ export default function Product() {
       <Filter />
 
       <div className="prod">
-        {filteredData.map((item) => (
+        {products.map((item) => (
           <div className="card card--shadow" key={item._id}>
             <img className="images" src={item.image} alt={item.title} />
             <Rating rt={item.ratings} />

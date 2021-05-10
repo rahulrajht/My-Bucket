@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/cart.css";
 import { useCart, Price, Rating } from "../index";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import Spinner from "./Spinner";
 
 export default function Cart() {
+  toast.configure();
+  const [isLoading, setLoading] = useState(true);
   const REMOVE_CART_ITEM = "removeCartItem";
   const INC_QTY = "incQty";
   const DEC_QTY = "decQty";
-  const { cartItems, dispatchData } = useCart();
+  const email = JSON.parse(localStorage.getItem("email"));
+  const { dispatchData, cartItems } = useCart();
   let count = 0;
   let price = 0;
   let disc = 0;
@@ -17,37 +23,58 @@ export default function Cart() {
     price += item.price * item.count;
     disc += ((item.price * item.discount) / 100) * item.count;
   }
-  function removeItem(items) {
+  async function removeItem(items) {
+    const url = "https://api-1.rahulgupta99.repl.co/cart/remove-item";
+
+    const res = await axios.post(url, { id: items._id, email: email });
     const id = items._id;
-    dispatchData({
-      type: REMOVE_CART_ITEM,
-      id
-    });
+    if (res.status === 200) {
+      toast.success("Removed ");
+      dispatchData({
+        type: REMOVE_CART_ITEM,
+        id
+      });
+    }
   }
-  function changeQty({ payload, data }) {
-    console.log("item in ", data);
+
+  useEffect(() => {
+    async function getData() {
+      const url = "https://api-1.rahulgupta99.repl.co/cart/getitems/" + email;
+      const res = await axios.get(url);
+      if (res.status === 200) {
+        dispatchData({
+          type: "setNewData",
+          newCartItems: res.data
+        });
+      }
+      setLoading(false);
+    }
+    getData();
+  }, [email, dispatchData]);
+
+  async function changeQty({ payload, data, value }) {
+    const url = "https://api-1.rahulgupta99.repl.co/cart/incQty";
     const id = data._id;
     const items = data;
+    const qty = data.count;
+    await axios.post(url, { email, id, value, qty });
+
     switch (payload) {
       case "inc":
-        dispatchData({
-          type: INC_QTY,
-          id
-        });
+        dispatchData({ type: INC_QTY, id });
         break;
       case "dec":
-        dispatchData({
-          type: DEC_QTY,
-          id,
-          items
-        });
+        dispatchData({ type: DEC_QTY, id, items });
         break;
       default:
         console.log(data);
     }
   }
+
   if (cartItems.length === 0) {
-    return (
+    return isLoading ? (
+      <Spinner />
+    ) : (
       <div className="no-items">
         <h3>It Seems Your Cart Is Empty.</h3>
         <Link className="link" to="/">
@@ -56,7 +83,9 @@ export default function Cart() {
       </div>
     );
   } else {
-    return (
+    return isLoading ? (
+      <Spinner />
+    ) : (
       <div className="maindiv-container">
         <div className="cartProducts">
           {cartItems.map((item) => (
@@ -73,7 +102,9 @@ export default function Cart() {
                 <Rating rt={item.ratings} />
                 <div className="flex-row">
                   <span
-                    onClick={() => changeQty({ payload: "inc", data: item })}
+                    onClick={() =>
+                      changeQty({ payload: "inc", data: item, value: 1 })
+                    }
                     className="btn-size"
                   >
                     {" "}
@@ -81,7 +112,9 @@ export default function Cart() {
                   </span>
                   <span className="qty"> {item.count} </span>
                   <span
-                    onClick={() => changeQty({ payload: "dec", data: item })}
+                    onClick={() =>
+                      changeQty({ payload: "dec", data: item, value: -1 })
+                    }
                     className="btn-size"
                   >
                     {" "}

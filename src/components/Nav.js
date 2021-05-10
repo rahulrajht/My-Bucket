@@ -1,17 +1,30 @@
 import "../styles/nav.css";
 import { useUrl, useCart } from "../index";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 export default function Nav() {
+  const { logout } = useAuth();
   const { wishList, cartItems } = useCart();
   const { setUrl } = useUrl();
+  const history = useHistory();
+  const user = localStorage.getItem("token");
+
+  async function LogOut() {
+    try {
+      await logout();
+      history.push("/");
+    } catch {
+      console.log("error in logout");
+    }
+  }
 
   return (
     <nav className="navbars">
       <label className="label" htmlFor="toogle">
         {" "}
-        &#9776;
-      </label>{" "}
+        &#9776;{" "}
+      </label>
       <input type="checkbox" id="toogle" />
       <label className="label-hide" htmlFor="toogle">
         <div className="side-bar">
@@ -74,6 +87,32 @@ export default function Nav() {
             {" "}
           </Link>
           <span className="span-img">{wishList.length}</span>
+        </div>
+
+        <div className="wrapper-container">
+          <label className=" person" htmlFor="user"></label>
+          <input type="checkbox" id="user" />
+
+          <div className={`account-info ${user ? "Login" : "logout"}`}>
+            {user ? (
+              <div className="user-info nav-btn">
+                <p className="user-name">
+                  {JSON.parse(localStorage.getItem("name"))}
+                </p>
+
+                <p className="user-email">
+                  {JSON.parse(localStorage.getItem("email"))}
+                </p>
+
+                <button onClick={LogOut}>Sign Out</button>
+              </div>
+            ) : (
+              <Link className="login-btn" to="/login">
+                {" "}
+                Log In
+              </Link>
+            )}
+          </div>
         </div>
       </ul>
     </nav>

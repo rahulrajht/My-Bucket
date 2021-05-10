@@ -97,7 +97,7 @@ export function reducer(
     case SET_NEW_DATA:
       return {
         ...state,
-        filteredData: newCartItems || []
+        cartItems: newCartItems || []
       };
     case HIGH_TO_LOW:
       return {

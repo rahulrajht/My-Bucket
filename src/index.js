@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { CartProvider } from "./context/cartContext";
+import { AuthProvider } from "./context/AuthProvider";
 
 export { useUrl, UrlProvider } from "./context/useUrl";
 export { useCart } from "./context/cartContext";
@@ -23,11 +24,13 @@ export { default as Nav } from "./components/Nav";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
-    <CartProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CartProvider>
+    </AuthProvider>
   </StrictMode>,
   rootElement
 );
