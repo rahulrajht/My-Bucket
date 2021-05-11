@@ -5,13 +5,11 @@ import "../styles/wishList.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { Spinner } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 export default function WishlistButton(item) {
-  const { dispatchData } = useCart();
+  const { dispatchData, wishList } = useCart();
   const [isTrue, setTrue] = useState(false);
-  const [isLoading, setLoading] = useState(false);
   const ADD_WISHLIST_ITEM = "addWishlistItem";
   const REMOVE_WISHLIST_ITEM = "removeWishlistItem";
   const isUserLogin = JSON.parse(localStorage.getItem("isUserLogin"));
@@ -21,8 +19,8 @@ export default function WishlistButton(item) {
   async function handleClick() {
     if (!isUserLogin) history.push("/login");
     setTrue(!isTrue);
-    if (isTrue === false) {
-      setLoading(true);
+
+    if (!checkItemInCart(wishList, item.item._id)) {
       const url = "https://api-1.rahulgupta99.repl.co/wishlist/add-to-wishlist";
       const res = await axios.post(url, { id: item.item._id, email: email });
       if (res.status === 200) {
@@ -39,9 +37,7 @@ export default function WishlistButton(item) {
     }
   }
 
-  return isLoading ? (
-    <Spinner animation="border" size="sm" />
-  ) : (
+  return (
     <img
       onClick={handleClick}
       className="wishImage"

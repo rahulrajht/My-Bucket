@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useCart, checkItemInCart } from "../index";
 
 import "../styles/addcartbutton.css";
@@ -7,9 +8,13 @@ export default function MoveToCart(item) {
   const wishListItem = { data: item.item, id: item.item._id };
   const ADD_CART_ITEM_AND_REMOVE_FROM_WISHLIST =
     "addCartItem&removeWishlistItem";
+  const email = JSON.parse(localStorage.getItem("email"));
 
-  function handleClick() {
+  async function handleClick() {
     if (!checkItemInCart(cartItems, item.item._id)) {
+      const url = "https://api-1.rahulgupta99.repl.co/cart/add-to-cart";
+      await axios.post(url, { id: item.item._id, email, isTrue: true });
+
       dispatchData({
         type: ADD_CART_ITEM_AND_REMOVE_FROM_WISHLIST,
         wishListItem

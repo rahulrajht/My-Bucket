@@ -1,4 +1,4 @@
-import { useContext, createContext, useReducer } from "react";
+import { useContext, createContext, useReducer, useState } from "react";
 import { data, reducer } from "./useReducer";
 export const cartContext = createContext();
 
@@ -7,7 +7,6 @@ export function CartProvider({ children }) {
     reducer,
     data
   );
-
   return (
     <cartContext.Provider
       value={{

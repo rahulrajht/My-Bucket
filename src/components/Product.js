@@ -49,8 +49,18 @@ export default function Product() {
               price={item.price}
               discount={item.discount}
             />
-            <AddToCartButton item={item} />
-            <WishlistButton item={item} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                flexDirection: "row",
+                width: "100%",
+                margin: "0 auto"
+              }}
+            >
+              <AddToCartButton item={item} />
+              <WishlistButton item={item} />
+            </div>
           </div>
         ))}
       </div>
