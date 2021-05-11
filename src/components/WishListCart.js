@@ -9,7 +9,7 @@ export default function WishListCart() {
   const [isLoading, setLoading] = useState(true);
   const { wishList, dispatchData } = useCart();
   const email = JSON.parse(localStorage.getItem("email"));
-
+  const isTrue = true;
   const url = "https://api-1.rahulgupta99.repl.co/wishlist/getitems/" + email;
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function WishListCart() {
                 discount={item.discount}
               />
               <MoveToCart item={item} />
-              <WishlistButton item={item} />
+              <WishlistButton item={item} isInWishList={isTrue} />
             </div>
           ))}
         </div>

@@ -5,12 +5,13 @@ import "../styles/addcartbutton.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Spinner } from "react-bootstrap";
+import { checkItemInCart } from "../utils/checkItemInCart";
 
 export default function AddToCartButton(item) {
   toast.configure();
   const [isLoading, setLoading] = useState(false);
   const [buttonText, setText] = useState("Add to Cart");
-  const { dispatchData } = useCart();
+  const { dispatchData, cartItems } = useCart();
   const history = useHistory();
   const isUserLogin = JSON.parse(localStorage.getItem("isUserLogin"));
   const email = JSON.parse(localStorage.getItem("email"));
