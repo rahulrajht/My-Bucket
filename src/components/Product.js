@@ -22,12 +22,12 @@ export default function Product() {
     async function getData() {
       const response = await axios.get(url);
       setLoading(false);
-      setProducts(response.data.data);
-      // const newCartItems = response.data.data;
-      // dispatchData({
-      //   type: SET_NEW_DATA,
-      //   newCartItems
-      // });
+      //setProducts(response.data.data);
+      const newCartItems = response.data.data;
+      dispatchData({
+        type: SET_NEW_DATA,
+        newCartItems
+      });
     }
     getData();
   }, [url, dispatchData]);
@@ -39,7 +39,7 @@ export default function Product() {
       <Filter />
 
       <div className="prod">
-        {products.map((item) => (
+        {filteredData.map((item) => (
           <div className="card card--shadow" key={item._id}>
             <img className="images" src={item.image} alt={item.title} />
             <Rating rt={item.ratings} />

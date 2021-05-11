@@ -10,6 +10,7 @@ export default function Cart() {
   toast.configure();
   const [isLoading, setLoading] = useState(true);
   const REMOVE_CART_ITEM = "removeCartItem";
+  const SET_CART_ITEMS = "setCartItems";
   const INC_QTY = "incQty";
   const DEC_QTY = "decQty";
   const email = JSON.parse(localStorage.getItem("email"));
@@ -43,7 +44,7 @@ export default function Cart() {
       const res = await axios.get(url);
       if (res.status === 200) {
         dispatchData({
-          type: "setNewData",
+          type: SET_CART_ITEMS,
           newCartItems: res.data
         });
       }

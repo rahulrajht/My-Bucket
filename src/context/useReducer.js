@@ -60,7 +60,7 @@ export function reducer(
     case SET_CART_ITEMS:
       return {
         ...state,
-        cartItems: fetchedCartItems || []
+        cartItems: newCartItems || []
       };
 
     case REMOVE_CART_ITEM:
@@ -97,7 +97,7 @@ export function reducer(
     case SET_NEW_DATA:
       return {
         ...state,
-        cartItems: newCartItems || []
+        filteredData: newCartItems || []
       };
     case HIGH_TO_LOW:
       return {
